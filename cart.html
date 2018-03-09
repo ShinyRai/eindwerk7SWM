@@ -22,38 +22,39 @@
         <a class="nav-link" href="contact.php">contact</a>
         <a class="nav-link" href="cart.html"><img src="images/shopping_cart.svg" alt="shopping cart"></a>
     </nav>
-
-    <section class="cart">
-        <h2>winkelmandje</h2>
-        <div class="row labels">
-            <h3 class="label col-5">smaak</h3>
-            <h3 class="label col-3">aantal</h3>
-            <h3 class="label col-4">prijs</h3>
-            
-        </div>
-        
-    </section>
-
     <main class="container">
-		<section class="contact">
 
-			<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-				<label for="voorn">Voornaam<span class="red">*</span></label>
-        		<input type="text" name="voorn" id="voorn" required autofocus>
-        		<br>
-        		<label for="achtern">Achternaam<span class="red">*</span></label>
-        		<input type="text" name="achtern" id="achtern" required>
-     			<br>
-		        <label for="email">Email<span class="red">*</span></label>
-		        <input type="email" name="email" id="email" required>
-		  		<br>
-		        <label for="bericht">Vraag<span class="red">*</span></label>
-		        <textarea name="bericht" id="bericht"></textarea>
-		    	<br><br>
-		        <input type="submit" value="verzenden">
-			</form>
-			
-		</section>
+		<section class="cart">
+            <h2>winkelmandje</h2>
+            <div class="row labels">
+                <h3 class="label col-3">smaak</h3>
+                <h3 class="label col-1">aantal</h3>
+                <h3 class="label col-2">prijs</h3>
+            </div>
+            <div class="row">
+                <p class="smaak col-3">AARDBEI x SINAASAPPEL</p>
+                <p class="aantal col-1"><input type="number" name="aantal1" id="aantal1" value="1"></p>
+                <p class="prijs col-2">4,20 EUR / st.</p>
+            </div>
+            <div class="row">
+                <p class="smaak col-3">MANGO x BANAAN</p>
+                <p class="aantal col-1"><input type="number" name="aantal1" id="aantal1" value="1"></p>
+                <p class="prijs col-2">4,20 EUR / st.</p>
+            </div>
+            <div class="row">
+                <p class="smaak col-3">APPEL x KIWI</p>
+                <p class="aantal col-1"><input type="number" name="aantal1" id="aantal1" value="1"></p>
+                <p class="prijs col-2">4,20 EUR / st.</p>
+            </div>
+            <div class="row">
+                <p class="smaak col-3"></p>
+                <p class="aantal col-1"></p>
+                <p class="totaal label col-2">test</p>
+            </div>
+        
+        </section>
+
+        
 		
 		
 	</main>
