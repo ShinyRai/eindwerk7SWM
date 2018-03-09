@@ -1,0 +1,34 @@
+/*Required*/
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins";
+
+/*Optional*/
+@import "node_modules/bootstrap/scss/reboot";
+@import "node_modules/bootstrap/scss/type";
+@import "node_modules/bootstrap/scss/images";
+@import "node_modules/bootstrap/scss/grid";
+@import "node_modules/bootstrap/scss/alert";
+@import "node_modules/bootstrap/scss/buttons";
+@import "node_modules/bootstrap/scss/modal";
+
+/*HTML5 bekend maken voor oudere browsers*/
+article,aside,figcaption,figure,footer,header,hgroup,main,nav,section{
+	display: block;
+}
+figure{
+	line-height: 0;
+}
+img{
+	min-width: 100%;
+}
+
+.clearfix {
+    overflow: auto;
+}
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
