@@ -43,11 +43,24 @@ html{
 nav{
 	background: #e29898;
 }
-.nav-link{
+nav .nav-link{
 	display: inline-block;
+	color: white;
+	font-weight: bold;
+	text-transform: uppercase;
+	padding: 10px;
+}
+.nav-link:hover{
+	background: #d66b6b;
+	padding: 10px;
+	color: #a34b4b;
+}
+.mrg-top{
+	padding-top: 30px;
 }
 .logoimg{
 	width: 90px;
+	padding: 5px;
 }
 .winkelkar{
 	width: 30px;
