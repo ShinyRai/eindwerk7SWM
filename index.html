@@ -35,18 +35,27 @@
 	</nav>
 
 	<section class="intro">
+		<img class="img-fluid" src="images/sfeerbeeld.png" alt="sfeerbeeld poshkey">
+		<div class="header_quote">
+			<h1 class="quote">"discover<br> the magic within"</h1>
+			<button type="button" class="btn btn-light" data-toggle="modal" data-target=".video"><span><img src="images/play_button.svg"></span> ONTDEK NU</button>
+		</div>
 
-			<img class="img-fluid" src="images/sfeerbeeld.png" alt="sfeerbeeld poshkey">
-			<div class="header_quote">
-				<h1 class="quote">"discover<br> the magic within"</h1>
-				<button type="button" class="btn btn-light">ONTDEK NU</button>
-			</div>
+<!-- Modal -->
+		<div class="modal fade video" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+    
+      <iframe height="600px" src="https://www.youtube.com/embed/f7MXckP5j6M?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      
+    </div>
+  </div>
+</div>
 
 	</section>
 
 	<main class="container">
 		<section class="aboutus row">
-
 			<div class="col txt_block">
 				<h2 class="subtitle">over ons</h2>
 				<p class="txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -55,7 +64,7 @@
 				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-				<button type="button" class="btn btn-pink">CONTACTEER ONS</button>
+				<button type="button" class="btn btn-light"><a href="contact.php">CONTACTEER ONS</a></button>
 			</div>
 
 			<div class="col img_block">
@@ -100,6 +109,7 @@
 		
 		
 	</main>
+	<script src="js/dist/main.min.js"></script>
 	<footer class="footer mx-auto"><p>Nele Van Nevel - 7SWM<br>Viso Mariakerke</p></footer>
 </body>
 </html>

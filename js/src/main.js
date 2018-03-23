@@ -1,1 +1,1 @@
-$('#modal').modal()
+$('#video').modal()
