@@ -13,52 +13,63 @@
 
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/dist/main.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Patrick+Hand" rel="stylesheet">
 </head>
 <body>
     <nav class="nav fixed-top mx-auto">
-        <a class="nav-link" href="index.html" title="terug naar de homepage"><img src="images/logo.png" alt="logo"></a>
-        <a class="nav-link" href="producten.php">Producten</a>
-        <a class="nav-link" href="cart.html">Koop nu</a>
-        <a class="nav-link" href="contact.php">contact</a>
-        <a class="nav-link" href="cart.html"><img src="images/shopping_cart.svg" alt="shopping cart"></a>
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-md-7 col-sm-7">
+                    <a href="index.html" title="terug naar de homepage"><img class="logoimg" src="images/logo.png" alt="logo"></a>
+                </div>
+                <div class="col-md-5 mrg-top col-sm-5">
+                  <a class="nav-link" href="producten.php">Producten</a>
+                    <a class="nav-link" href="cart.html">Koop nu</a>
+                    <a class="nav-link" href="contact.php">contact</a>
+                    <a href="cart.html"><img class="winkelkar" src="images/shopping_cart.svg" alt="shopping cart"></a>
+                </div>
+            </div>
+        </div>  
     </nav>
-    <main class="container">
+<main class="container">
 
-		<section class="cart">
-            <h2>winkelmandje</h2>
-            <div class="row labels">
-                <h3 class="label col-3">smaak</h3>
-                <h3 class="label col-1">aantal</h3>
-                <h3 class="label col-2">prijs</h3>
-            </div>
-            <div class="row">
-                <p class="smaak col-3">AARDBEI x SINAASAPPEL</p>
-                <p class="aantal col-1"><input type="number" name="aantal1" id="aantal1" value="1"></p>
-                <p class="prijs col-2">4,20 EUR / st.</p>
-            </div>
-            <div class="row">
-                <p class="smaak col-3">MANGO x BANAAN</p>
-                <p class="aantal col-1"><input type="number" name="aantal1" id="aantal1" value="1"></p>
-                <p class="prijs col-2">4,20 EUR / st.</p>
-            </div>
-            <div class="row">
-                <p class="smaak col-3">APPEL x KIWI</p>
-                <p class="aantal col-1"><input type="number" name="aantal1" id="aantal1" value="1"></p>
-                <p class="prijs col-2">4,20 EUR / st.</p>
-            </div>
-            <div class="row">
-                <p class="smaak col-3"></p>
-                <p class="aantal col-1"></p>
-                <p class="totaal label col-2">test</p>
-            </div>
-        
-        </section>
+	<section class="cart">
+        <h2>winkelmandje</h2>
+        <div class="row labels">
+            <h3 class="label col-3">smaak</h3>
+            <h3 class="label col-1">aantal</h3>
+            <h3 class="label col-2">prijs</h3>
+        </div>
+        <div class="row">
+            <p class="smaak col-3">AARDBEI x SINAASAPPEL</p>
+            <p class="aantal col-1"><input type="number" name="aantal1" id="aantal1" value="1"></p>
+            <p class="prijs col-2">4,20 EUR / st.</p>
+        </div>
+        <div class="row">
+            <p class="smaak col-3">MANGO x BANAAN</p>
+            <p class="aantal col-1"><input type="number" name="aantal1" id="aantal1" value="1"></p>
+            <p class="prijs col-2">4,20 EUR / st.</p>
+        </div>
+        <div class="row">
+            <p class="smaak col-3">APPEL x KIWI</p>
+            <p class="aantal col-1"><input type="number" name="aantal1" id="aantal1" value="1"></p>
+            <p class="prijs col-2">4,20 EUR / st.</p>
+        </div>
+        <div class="row">
+            <p class="smaak col-3"></p>
+            <p class="aantal col-1"></p>
+            <p class="totaal label col-2">test</p>
+        </div>
+    
+    </section>
 
-        
-		
-		
-	</main>
-    <footer class="footer mx-auto"><p>Nele Van Nevel - 7SWM<br>Viso Mariakerke</p></footer>
+    
+	
+	
+</main>
+<footer class="footer mx-auto"><p>Nele Van Nevel - 7SWM<br>Viso Mariakerke</p></footer>
 </body>
 </html>
 

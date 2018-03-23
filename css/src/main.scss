@@ -7,6 +7,7 @@
 @import "node_modules/bootstrap/scss/reboot";
 @import "node_modules/bootstrap/scss/type";
 @import "node_modules/bootstrap/scss/images";
+@import "node_modules/bootstrap/scss/utilities";
 @import "node_modules/bootstrap/scss/grid";
 @import "node_modules/bootstrap/scss/buttons";
 @import "node_modules/bootstrap/scss/modal";
@@ -131,9 +132,12 @@ iframe{
 }
 .btn-pink {
 	background: #d66b6b;
+	color: white;
+	margin-top: 20px;
 }
 .btn-pink:hover{
 	background: #a34b4b;
+	color: white;
 }
 
 .img_block{
@@ -173,4 +177,13 @@ iframe{
 	border-bottom: 1px solid white;
 	padding-bottom: 5px;
 	margin-bottom: 10px;
+}
+
+footer{
+	background: #d66b6b;
+	color: white;
+	width: 100%;
+}
+footer p{
+	margin-left: 10px;
 }
