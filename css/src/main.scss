@@ -75,9 +75,7 @@ nav .nav-link{
 .logoimg{
 	width: 85px;
 	padding: 5px;
-	position: absolute;
-	top: 0px;
-	left: auto;
+	
 }
 .winkelkar{
 	width: 30px;
@@ -165,9 +163,14 @@ iframe{
 .card{
 	background: #d66b6b;
 	border-radius: 0;
+	color: white;
 }
-.card-img-top{
-	max-height: 150px;
-	max-width: auto;
-	overflow: hidden;
+.card h3{
+	color: white;
+	text-align: center;
+	width: 100%;
+	font-size: 26px;
+	border-bottom: 1px solid white;
+	padding-bottom: 5px;
+	margin-bottom: 10px;
 }
