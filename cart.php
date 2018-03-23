@@ -76,7 +76,7 @@
          <h2 class="subtitle">check-out</h2>
             <p class="label">persoonlijke gegevens</p>
 
-            <input type="" name="naam" id="naam" placeholder="naam">
+            <input type="" name="naam" id="naam" placeholder="NAAM">
 
         </div>
         <div class="col-6 ">
