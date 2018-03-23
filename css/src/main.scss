@@ -15,6 +15,7 @@
 @import "node_modules/bootstrap/scss/nav";
 @import "node_modules/bootstrap/scss/navbar";
 
+/*roze kleur == #d66b6b*/
 
 /*HTML5 bekend maken voor oudere browsers*/
 article,aside,figcaption,figure,footer,header,hgroup,main,nav,section{
@@ -24,9 +25,9 @@ figure{
 	line-height: 0;
 }
 img{
-	min-width: 100%;
+	max-width: 100%;
 }
-
+/**/
 .clearfix {
     overflow: auto;
 }
@@ -35,4 +36,30 @@ img{
     clear: both;
     display: table;
 }
+html{
+	font-family: 'Open Sans', sans-serif;
+}
+/*====NAV===*/
+nav{
+	background: #e29898;
+}
+.nav-link{
+	display: inline-block;
+}
+.logoimg{
+	width: 90px;
+}
+.winkelkar{
+	width: 30px;
+}
+nav-right{
+	width: 80%;
+	float: right;
+	text-align: right;
+}
 
+
+.subtitle{
+	font-family: 'Patrick Hand', cursive;
+	text-transform: uppercase;
+}
