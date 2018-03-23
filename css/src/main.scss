@@ -187,3 +187,20 @@ footer{
 footer p{
 	margin-left: 10px;
 }
+
+/*=================================================CART.PHP*/
+
+.nr-min{
+	max-width: 50px;
+}
+.cart .subtitle{
+	margin-top: 140px;
+}
+.label{
+	text-transform: uppercase;
+	font-size: 18px;
+	font-weight: bold;
+}
+input::placeholder{
+	text-transform: uppercase;
+}

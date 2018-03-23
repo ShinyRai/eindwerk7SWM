@@ -26,17 +26,23 @@
                 </div>
                 <div class="col-md-5 mrg-top col-sm-5">
                   <a class="nav-link" href="producten.php">Producten</a>
-                    <a class="nav-link" href="cart.html">Koop nu</a>
+                    <a class="nav-link" href="cart.php">Koop nu</a>
                     <a class="nav-link" href="contact.php">contact</a>
-                    <a href="cart.html"><img class="winkelkar" src="images/shopping_cart.svg" alt="shopping cart"></a>
+                    <a href="cart.php"><img class="winkelkar" src="images/shopping_cart.svg" alt="shopping cart"></a>
                 </div>
             </div>
         </div>  
     </nav>
 <main class="container">
 
+<?php 
+    $prijs_basis = 4.20;
+    $prijs = number_format($prijs_basis, 2);
+    include 'berekening.php';
+?>
+
 	<section class="cart">
-        <h2>winkelmandje</h2>
+        <h2 class="subtitle">winkelmandje</h2>
         <div class="row labels">
             <h3 class="label col-3">smaak</h3>
             <h3 class="label col-1">aantal</h3>
@@ -44,34 +50,62 @@
         </div>
         <div class="row">
             <p class="smaak col-3">AARDBEI x SINAASAPPEL</p>
-            <p class="aantal col-1"><input type="number" name="aantal1" id="aantal1" value="1"></p>
-            <p class="prijs col-2">4,20 EUR / st.</p>
+            <p class="aantal col-1"><input min="0" class="nr-min" type="number" name="aantal1" id="aantal1"></p>
+            <p class="prijs col-2"><?php echo $prijs ?> EUR / st.</p>
         </div>
         <div class="row">
             <p class="smaak col-3">MANGO x BANAAN</p>
-            <p class="aantal col-1"><input type="number" name="aantal1" id="aantal1" value="1"></p>
-            <p class="prijs col-2">4,20 EUR / st.</p>
+            <p class="aantal col-1"><input min="0" class="nr-min" type="number" name="aantal2" id="aantal2"></p>
+            <p class="prijs col-2"><?php echo $prijs ?> EUR / st.</p>
         </div>
         <div class="row">
             <p class="smaak col-3">APPEL x KIWI</p>
-            <p class="aantal col-1"><input type="number" name="aantal1" id="aantal1" value="1"></p>
-            <p class="prijs col-2">4,20 EUR / st.</p>
+            <p class="aantal col-1"><input min="0" class="nr-min" type="number" name="aantal3" id="aantal3"></p>
+            <p class="prijs col-2"><?php echo $prijs ?> EUR / st.</p>
         </div>
         <div class="row">
             <p class="smaak col-3"></p>
-            <p class="aantal col-1"></p>
-            <p class="totaal label col-2">test</p>
+            <p class="aantal label col-1">TOTAAL</p>
+            <p class="totaal col-2"><?php echo $prijs_totaal ?></p>
         </div>
     
     </section>
 
-    
+    <div class="row">
+        <div class="col-6 ">
+         <h2 class="subtitle">check-out</h2>
+            <p class="label">persoonlijke gegevens</p>
+
+            <input type="" name="naam" id="naam" placeholder="naam">
+
+        </div>
+        <div class="col-6 ">
+            testo
+        </div>
+        
+    </div>
+
+
 	
 	
 </main>
 <footer class="footer mx-auto"><p>Nele Van Nevel - 7SWM<br>Viso Mariakerke</p></footer>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <?php
 // validatie
