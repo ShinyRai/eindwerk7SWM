@@ -52,6 +52,10 @@ html{
 /*====NAV===*/
 nav{
 	background: #e29898;
+	z-index: 12;
+
+	width: 100%;
+	position: fixed;
 }
 nav .nav-link{
 	display: inline-block;
@@ -66,11 +70,14 @@ nav .nav-link{
 	color: #a34b4b;
 }
 .mrg-top{
-	padding-top: 30px;
+	padding-top: 20px;
 }
 .logoimg{
-	width: 90px;
+	width: 85px;
 	padding: 5px;
+	position: absolute;
+	top: 0px;
+	left: auto;
 }
 .winkelkar{
 	width: 30px;
@@ -91,7 +98,7 @@ nav-right{
 }
 .header_quote{
 	position: absolute;
-	top: 100px;
+	top: 180px;
 	right: 200px;
 	text-transform: uppercase;
 	color: white;
@@ -106,21 +113,61 @@ iframe{
 }
 
 /*====ABOUT US====*/
+.aboutus{
+	margin-bottom: 50px;
+}
 .subtitle{
 	border-bottom: 10px solid #d66b6b;
 	padding-bottom: 10px;
 	margin-bottom: 20px;
 }/*TODO: LIJN DOORLOPEN LINKS*/
-
-.txt_block button a:hover{
+.txt{
+	width: 85%;
+	text-align: justify;
+}
+.btn-pink a:hover{
 	text-decoration: none;
 }
-.txt_block button a{
+.btn-pink a{
 	color: white;
 }
-.txt_block button{
+.btn-pink {
 	background: #d66b6b;
 }
-.txt_block button:hover{
+.btn-pink:hover{
 	background: #a34b4b;
+}
+
+.img_block{
+	
+	position: relative;
+}
+.rel{
+	position: absolute;
+	right: -25px;
+	width: 150px;
+	z-index: 8;
+}
+.roze{
+	top: 35px;
+}
+.geel{
+	top: 200px;
+}
+.groen{
+	top: 365px;
+}
+
+/*====PRODUCTS====*/
+.products{
+	margin-bottom: 50px;
+}
+.card{
+	background: #d66b6b;
+	border-radius: 0;
+}
+.card-img-top{
+	max-height: 150px;
+	max-width: auto;
+	overflow: hidden;
 }

@@ -23,7 +23,9 @@ gulp.task('js', function () {
   	'node_modules/bootstrap/js/dist/util.js', 
   	'node_modules/bootstrap/js/dist/modal.js', 
   	'js/src/main.js'])
-  	.pipe(concat('main.min.js'))
+  	.pipe(concat('main.js'))
+    .pipe(gulp.dest('js/dist'))
+    .pipe(concat('main.min.js'))
   	.pipe(uglify())
     .pipe(gulp.dest('js/dist'));
 });
