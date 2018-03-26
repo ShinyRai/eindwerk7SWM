@@ -105,6 +105,7 @@ if (mysqli_num_rows($result) > 0) {
 					<div class=\"card-body\">
 						<p class=\"card-text\">
 						<h3>{$rij['naam']}</h3>{$rij['beschrijving']}</p>
+						<a href=""></a>
 					</div>
 				</div>
 			</div>";

@@ -52,6 +52,13 @@ html{
 }
 .footer p{
 	margin-bottom: 0;
+	margin-left: 10px;
+	padding: 10px;
+}
+footer{
+	background: #d66b6b;
+	color: white;
+	width: 100%;
 }
 /*====NAV===*/
 nav{
@@ -184,15 +191,6 @@ iframe{
 	text-transform: uppercase;
 }
 
-footer{
-	background: #d66b6b;
-	color: white;
-	width: 100%;
-}
-footer p{
-	margin-left: 10px;
-}
-
 /*=================================================CART.PHP*/
 
 .nr-min{
@@ -205,4 +203,12 @@ footer p{
 	text-transform: uppercase;
 	font-size: 18px;
 	font-weight: bold;
+}
+
+/*LOGIN FORM OPMAAK*/
+.login-form{
+	margin: 0 auto;
+	width: 40%;
+	margin-top: 200px;
+	padding-bottom: 200px;
 }
