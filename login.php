@@ -1,3 +1,23 @@
+<?php 
+session_start();
+
+
+	if(isset($_POST['username']) && isset($_POST['password'])){
+		$usern = $_POST['username'];
+		$ww = $_POST['password'];
+
+		if($usern =="admin" && $ww == "viso"){
+			$_SESSION['username'] = $_POST['username'];
+			header('Location: admin.php');
+			
+		}elseif ($usern == "" || $ww == ""){
+			echo "vul alle gevraagde informatie in";
+		}else{
+			echo "verkeerde login";
+		}
+	}
+?>
+
 <?php
 //stap 1b: bestand db_conn.php insluiten
 include("includes/db_conn.php");
@@ -37,14 +57,19 @@ include("includes/db_conn.php");
 <main>
 
 	<section class="login-form">
-		<label for="username">Gebruikersnaam</label><br>
-		<input type="text" name="username" id="username">
-		<br>
-		<label for="username">Wachtwoord</label><br>
-		<input type="password" name="password" id="password">
-		<br><br>
-		<input type="submit" value="inloggen">
+		<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+			<label for="username">Gebruikersnaam</label><br>
+			<input type="text" name="username" id="username">
+			<br>
+			<label for="username">Wachtwoord</label><br>
+			<input type="password" name="password" id="password">
+			<br><br>
+			<input type="submit" value="inloggen">
+		</form>
+		
 	</section>
+
+
 	
 
 
