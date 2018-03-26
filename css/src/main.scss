@@ -50,6 +50,9 @@ html{
 	padding: 10px;
 	text-transform: uppercase;
 }
+.footer p{
+	margin-bottom: 0;
+}
 /*====NAV===*/
 nav{
 	background: #e29898;
@@ -178,6 +181,7 @@ iframe{
 	border-bottom: 1px solid white;
 	padding-bottom: 5px;
 	margin-bottom: 10px;
+	text-transform: uppercase;
 }
 
 footer{

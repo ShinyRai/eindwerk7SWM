@@ -1,3 +1,9 @@
+<?php
+//stap 1b: bestand db_conn.php insluiten
+include("includes/db_conn.php");
+?>
+
+
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -76,35 +82,42 @@
 			
 		</section>
 
-		<section class="products">
-			<div class="row">
-				<div class="col">
-					<div class="card">
-	  					<img class="card-img-top" src="images/flespink_small.png" alt="aardbei x sinaasappel">
-	  					<div class="card-body">
-	    					<p class="card-text">
-	    					<h3>AARDBEI x SINAASAPPEL</h3>De vertrouwde smaak van aardbei en appelsiel geeft een vertrouwde maar ook pittige smaak mee, perfect voor een avondje uit.</p>
-	  					</div>
+<?php
+	$query = "SELECT * FROM producten";
+
+	if (!$result = mysqli_query($db,$query)) {
+    	echo "FOUT: Query kon niet uitgevoerd worden"; 
+		exit; 
+	}
+?>
+
+	<section class="products">
+		<div class="row ">
+				
+<?php 
+// stap 3: De resultaten naar het scherm schrijven
+
+if (mysqli_num_rows($result) > 0) {
+    while ($rij = mysqli_fetch_array($result)) {
+        echo "<div class=\"col d-flex align-items-stretch\">
+				<div class=\"card\">
+					<img class=\"card-img-top\" src=\"images/{$rij['afb']}\" alt=\"{$rij['naam']}\">
+					<div class=\"card-body\">
+						<p class=\"card-text\">
+						<h3>{$rij['naam']}</h3>{$rij['beschrijving']}</p>
 					</div>
 				</div>
-				<div class="col">
-					<div class="card">
-	  					<img class="card-img-top" src="images/flesyello_small.png" alt="mango x banaan">
-	  					<div class="card-body">
-	    					<p class="card-text">
-	    					<h3>AARDBEI x SINAASAPPEL</h3>De vertrouwde smaak van aardbei en appelsiel geeft een vertrouwde maar ook pittige smaak mee, perfect voor een avondje uit.</p>
-	  					</div>
-					</div>
-				</div>
-				<div class="col">
-					<div class="card">
-	  					<img class="card-img-top" src="images/flesgreen_small.png" alt="appel x kiwi">
-	  					<div class="card-body">
-	    					<p class="card-text">
-	    					<h3>AARDBEI x SINAASAPPEL</h3>De vertrouwde smaak van aardbei en appelsiel geeft een vertrouwde maar ook pittige smaak mee, perfect voor een avondje uit.</p>
-	  					</div>
-					</div>
-				</div>
+			</div>
+				";
+    }
+
+}else {
+	echo "<p>Er werden geen gegevens gevonden in de DB</p>";	
+} // einde if (mysqli_num_rows($result) > 0)
+?>		
+	  					
+	  					
+	
 			</div>
 			<div class="row">
 				<div class="col-12 d-flex justify-content-center">

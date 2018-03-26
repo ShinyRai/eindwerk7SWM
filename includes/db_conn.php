@@ -2,9 +2,9 @@
 	//initialisatie
 
 	define("DB_SERVER", "localhost");
-	define("DB_USER", "vanneveln");
-	define("DB_PASS", "yA5b6CLN");
-	define("DB_NAME", "vanneveln");
+	define("DB_USER", "root");
+	define("DB_PASS", "");
+	define("DB_NAME", "poshkey");
 
 
 	//STEP 1: connecteren met database  ! = not
