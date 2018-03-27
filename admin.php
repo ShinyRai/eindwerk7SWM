@@ -70,7 +70,7 @@ include("includes/db_conn.php");
 				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-				<button type="button" class="btn btn-light btn-pink"><a href="contact.php">CONTACTEER ONS</a></button>
+				<button type="button" class="btn btn-pink"><a href="contact.php">CONTACTEER ONS</a></button>
 			</div>
 
 			<div class="col img_block">
@@ -105,7 +105,7 @@ if (mysqli_num_rows($result) > 0) {
 					<div class=\"card-body\">
 						<p class=\"card-text\">
 						<h3>{$rij['naam']}</h3>{$rij['beschrijving']}</p>
-						<a href=""></a>
+						<a class=\"btn btn-light \" href=\"wijzigen.php?id={$rij['id']}\"><span><img src=\"images/wijzigen.png\"></span>  wijzigen</a>
 					</div>
 				</div>
 			</div>";
@@ -137,7 +137,7 @@ if (mysqli_num_rows($result) > 0) {
 <?php
 // stap 4: De verbinding met de database sluiten  
 
-if (!mysqli_close($conn)) {
+if (!mysqli_close($db)) {
     echo "FOUT: De verbinding kon niet worden gesloten"; 
     exit;
 }
