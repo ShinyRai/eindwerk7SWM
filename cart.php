@@ -16,6 +16,7 @@
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Patrick+Hand" rel="stylesheet">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 </head>
 <body>
     <nav class="nav fixed-top mx-auto">
@@ -42,10 +43,7 @@
 
     $prijs_totaal = $aantal * $prijs_basis;
 ?>
-    <script>
-        console.log( $("#aantal1").val() );
-
-    </script>
+    
 
 
 	<form class="cart" method="GET">
@@ -57,17 +55,17 @@
         </div>
         <div class="row">
             <p class="smaak col-3">AARDBEI x SINAASAPPEL</p>
-            <p class="aantal col-1"><input min="0" class="nr-min" type="number" name="aantal1" id="aantal1"></p>
+            <p class="aantal col-1"><input min="0" class="nr-min" type="number" name="aantal1" id="aantal1" value= 0></p>
             <p class="prijs col-2"><?php echo $prijs ?> EUR / st.</p>
         </div>
         <div class="row">
             <p class="smaak col-3">MANGO x BANAAN</p>
-            <p class="aantal col-1"><input min="0" class="nr-min" type="number" name="aantal2" id="aantal2"></p>
+            <p class="aantal col-1"><input min="0" class="nr-min" type="number" name="aantal2" id="aantal2" value= 0></p>
             <p class="prijs col-2"><?php echo $prijs ?> EUR / st.</p>
         </div>
         <div class="row">
             <p class="smaak col-3">APPEL x KIWI</p>
-            <p class="aantal col-1"><input min="0" class="nr-min" type="number" name="aantal3" id="aantal3"></p>
+            <p class="aantal col-1"><input min="0" class="nr-min" type="number" name="aantal3" id="aantal3" value= 0></p>
             <p class="prijs col-2"><?php echo $prijs ?> EUR / st.</p>
         </div>
         <div class="row">
@@ -92,11 +90,13 @@
         
     </div>
 
+<script>
+        console.log( $("#aantal1").val() );
 
+    </script>
 	
 	
 </main>
-<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script src="js/dist/main.min.js"></script>
 <footer class="footer mx-auto"><p>Nele Van Nevel - 7SWM<br>Viso Mariakerke</p></footer>
 </body>
