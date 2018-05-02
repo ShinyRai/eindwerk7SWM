@@ -136,7 +136,7 @@ if (mysqli_num_rows($result) > 0) {
 <?php
 // stap 4: De verbinding met de database sluiten  
 
-if (!mysqli_close($conn)) {
+if (!mysqli_close($db)) {
     echo "FOUT: De verbinding kon niet worden gesloten"; 
     exit;
 }
