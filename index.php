@@ -28,7 +28,7 @@ include("includes/db_conn.php");
 		<div class="container">
 			<div class="row justify-content-between">
 				<div class="col-md-7 col-sm-7">
-			     	<a href="index.html" title="terug naar de homepage"><img class="logoimg" src="images/logo.png" alt="logo"></a>
+			     	<a href="index.php" title="terug naar de homepage"><img class="logoimg" src="images/logo.png" alt="logo"></a>
 			    </div>
 			    <div class="col-md-5 mrg-top col-sm-5">
 			      <a class="nav-link" href="producten.php">Producten</a>
