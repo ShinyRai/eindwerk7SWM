@@ -38,12 +38,17 @@
 <?php 
     $prijs_basis = 4.20;
     $prijs = number_format($prijs_basis, 2);
-    $aantal = 
+    $aantal = $_GET['aantal1'] + $_GET['aantal2'] + $_GET['aantal3'];
 
     $prijs_totaal = $aantal * $prijs_basis;
 ?>
+    <script>
+        console.log( $("#aantal1").val() );
 
-	<section class="cart">
+    </script>
+
+
+	<form class="cart" method="GET">
         <h2 class="subtitle">winkelmandje</h2>
         <div class="row labels">
             <h3 class="label col-3">smaak</h3>
@@ -71,14 +76,14 @@
             <p class="totaal col-2"><?php echo $prijs_totaal ?></p>
         </div>
     
-    </section>
+    </form>
 
     <div class="row">
         <div class="col-6 ">
          <h2 class="subtitle">check-out</h2>
             <p class="label">persoonlijke gegevens</p>
 
-            <input type="" name="naam" id="naam" placeholder=" NAAM">
+            <input type="text" name="naam" id="naam" placeholder=" NAAM">
 
         </div>
         <div class="col-6 ">
@@ -91,6 +96,8 @@
 	
 	
 </main>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="js/dist/main.min.js"></script>
 <footer class="footer mx-auto"><p>Nele Van Nevel - 7SWM<br>Viso Mariakerke</p></footer>
 </body>
 </html>
