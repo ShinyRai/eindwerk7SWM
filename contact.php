@@ -41,7 +41,7 @@ include("includes/db_conn.php");
     </nav>
 
 	<main class="container">
-		<section class="contact">
+		<section id="contact-form" style="margin-top: 150px; margin-bottom: 200px;">
 
 			<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
 				<label for="voorn">Voornaam<span class="red">*</span></label>
