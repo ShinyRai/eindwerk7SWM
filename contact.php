@@ -1,28 +1,45 @@
+<?php
+//stap 1b: bestand db_conn.php insluiten
+include("includes/db_conn.php");
+?>
+
+
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-	<meta charset="UTF-8" />
-	<meta name="description" content="PoshKey is een biologisch drankje, bedoeld als vervanging van alcohol. Blijf klassevol en nuchter.">
-  	<meta name="keywords" content="PoshKey, poshkey, Poshkey, poshKey, drank, drink, alcohol-vrij, alcohol vrij, glazen fles, mango banaan, aardbei sinaasappel, appel kiwi, aardbei appelsien">
-  	<meta name="author" content="PoshKey Inc.">
-	<title>PoshKey</title>
+    <meta charset="UTF-8" />
+    <meta name="description" content="PoshKey is een biologisch drankje, bedoeld als vervanging van alcohol. Blijf klassevol en nuchter.">
+    <meta name="keywords" content="PoshKey, poshkey, Poshkey, poshKey, drank, drink, alcohol-vrij, alcohol vrij, glazen fles, mango banaan, aardbei sinaasappel, appel kiwi, aardbei appelsien">
+    <meta name="author" content="PoshKey Inc.">
+    <title>PoshKey</title>
 
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link rel="icon" href="favicon.gif" type="image/gif">	
+    <link rel="icon" href="favicon.gif" type="image/gif">   
 
-	<link rel="stylesheet" type="text/css" href="css/reset.css">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/dist/main.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Patrick+Hand" rel="stylesheet">
 </head>
 <body>
-	<nav>
-		<ul>
-			<li><a href="" title ="" alt=""></a></li>
-			<li><a href="" title ="" alt=""></a></li>
-			<li><a href="" title ="" alt=""></a></li>
-			<li><a href="" title ="" alt=""></a></li>
-		</ul>
-	</nav>
+    <nav class="nav fixed-top mx-auto">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-md-7 col-sm-7">
+                    <a href="index.php" title="terug naar de homepage"><img class="logoimg" src="images/logo.png" alt="logo"></a>
+                </div>
+                <div class="col-md-5 mrg-top col-sm-5">
+                  <a class="nav-link" href="index.php#prods">Producten</a>
+                    <a class="nav-link" href="cart.php">Koop nu</a>
+                    <a class="nav-link" href="contact.php">contact</a>
+                    <a href="cart.php"><img class="winkelkar" src="images/shopping_cart.svg" alt="shopping cart"></a>
+                </div>
+            </div>
+        </div>  
+    </nav>
+
 	<main class="container">
 		<section class="contact">
 
@@ -46,9 +63,19 @@
 		
 		
 	</main>
-	<footer></footer>
+    <script src="js/dist/main.min.js"></script>
+    <footer class="footer"><p>Nele Van Nevel - 7SWM<br>Viso Mariakerke</p></footer>
 </body>
 </html>
+
+<?php
+// stap 4: De verbinding met de database sluiten  
+
+if (!mysqli_close($db)) {
+    echo "FOUT: De verbinding kon niet worden gesloten"; 
+    exit;
+}
+?>
 
 <?php
 // validatie
@@ -59,7 +86,7 @@ if(isset($_POST['voorn'])&&isset($_POST['achtern'])&&isset($_POST['email'])&&iss
     $_POST['email'] = htmlspecialchars($_POST['email']);
     $_POST['bericht'] = htmlspecialchars($_POST['bericht']);
   
-    $to = "vanneveln@visocloud.org";
+    $to = $_POST["email"];
     $subject = "contact via site";
 
     $message = "

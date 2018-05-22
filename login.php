@@ -46,7 +46,7 @@ include("includes/db_conn.php");
 			     	<a href="index.php" title="terug naar de homepage"><img class="logoimg" src="images/logo.png" alt="logo"></a>
 			    </div>
 			    <div class="col-md-5 mrg-top col-sm-5">
-			      <a class="nav-link" href="producten.php">Producten</a>
+			      <a class="nav-link" href="index.php#prods">Producten</a>
 					<a class="nav-link" href="cart.php">Koop nu</a>
 					<a class="nav-link" href="contact.php">contact</a>
 					<a href="cart.php"><img class="winkelkar" src="images/shopping_cart.svg" alt="shopping cart"></a>
