@@ -39,7 +39,7 @@
 <?php 
     $prijs_basis = 4.20;
     $prijs = number_format($prijs_basis, 2);
-    $aantal = $("#aantal1").val() + $("#aantal2").val() + $("#aantal3").val();
+    
 
     $prijs_totaal = $aantal * $prijs_basis;
 ?>
