@@ -78,16 +78,23 @@
 
     <div class="row">
         <div class="col-6 ">
-         <h2 class="subtitle">check-out</h2>
+            <h2 class="subtitle">check-out</h2>
             <p class="label">persoonlijke gegevens</p>
 
-            <input type="text" name="naam" id="naam" placeholder=" NAAM">
+            <input type="text" name="naam" id="naam" placeholder=" NAAM"> <br>
             <input type="email" name="email" id="email" placeholder=" EMAIL">
+            <p>Je wordt automatisch ingeschreven voor onze nieuwsbrief</p>
+
+            <p class="label">betaalmethode</p>
+            <input type="radio" name="betaalmethode" value="paypal" checked><img src="images/pay_paypal.png" alt="PayPal">
+            <input type="radio" name="betaalmethode" value="american_express"><img src="images/pay_americanexpress.png" alt="AmeriCanExpress">
+            <input type="radio" name="betaalmethode" value="visa"><img src="images/pay_visa.png" alt="Visa">
+            <input type="radio" name="betaalmethode" value="mastercard"><img src="images/pay_mastercard.png" alt="Mastercard">
 
         </div>
         <div class="col-6 ">
             <div class="col-12"></div>
-            testo
+            <p class="label">leveringsadres</p>
         </div>
         
     </div>
