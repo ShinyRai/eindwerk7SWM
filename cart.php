@@ -80,21 +80,28 @@
         <div class="col-6 ">
             <h2 class="subtitle">check-out</h2>
             <p class="label">persoonlijke gegevens</p>
+            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+                <input type="text" name="naam" id="naam" placeholder=" NAAM"> <br>
+                <input type="email" name="email" id="email" placeholder=" EMAIL">
+                <p>Je wordt automatisch ingeschreven voor onze nieuwsbrief</p>
 
-            <input type="text" name="naam" id="naam" placeholder=" NAAM"> <br>
-            <input type="email" name="email" id="email" placeholder=" EMAIL">
-            <p>Je wordt automatisch ingeschreven voor onze nieuwsbrief</p>
-
-            <p class="label">betaalmethode</p>
-            <input type="radio" name="betaalmethode" value="paypal" checked><img src="images/pay_paypal.png" alt="PayPal">
-            <input type="radio" name="betaalmethode" value="american_express"><img src="images/pay_americanexpress.png" alt="AmeriCanExpress">
-            <input type="radio" name="betaalmethode" value="visa"><img src="images/pay_visa.png" alt="Visa">
-            <input type="radio" name="betaalmethode" value="mastercard"><img src="images/pay_mastercard.png" alt="Mastercard">
+                <p class="label">betaalmethode</p>
+                <input type="radio" name="betaalmethode" value="paypal" checked><img class="payment" src="images/pay_paypal.png" alt="PayPal">
+                <input type="radio" name="betaalmethode" value="american_express"><img class="payment" src="images/pay_americanexpress.png" alt="AmeriCanExpress"><br>
+                <input type="radio" name="betaalmethode" value="visa"><img class="payment" src="images/pay_visa.png" alt="Visa">
+                <input type="radio" name="betaalmethode" value="mastercard"><img class="payment" src="images/pay_mastercard.png" alt="Mastercard">
+            </form>
 
         </div>
         <div class="col-6 ">
-            <div class="col-12"></div>
-            <p class="label">leveringsadres</p>
+            <div class="col-12"> <br><br><br></div>
+            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+                <p class="label">leveringsadres</p>
+                <input type="text" name="adres" id="adres" placeholder=" ADRES"> <input type="text" name="nrbus" id="nrbus" placeholder=" NR/BUS"><br>
+                <input type="number" name="postcode" id="postcode" placeholder=" POSTCODE"> <input type="text" name="gemeente" id="gemeente" placeholder=" GEMEENTE"><br>
+
+                <input class="btn btn-light btn-pink" type="submit" value="betalen">
+            </form>
         </div>
         
     </div>

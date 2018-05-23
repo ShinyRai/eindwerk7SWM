@@ -42,7 +42,7 @@ include("includes/db_conn.php");
 
 	<main class="container">
 		<section id="contact-form" style="margin-top: 150px; margin-bottom: 200px;">
-
+            <h2 class="subtitle">Contacteer ons</h2>
 			<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
 				<label for="voorn">Voornaam<span class="red">*</span></label>
         		<input type="text" name="voorn" id="voorn" required autofocus>
@@ -56,17 +56,10 @@ include("includes/db_conn.php");
 		        <label for="bericht">Vraag<span class="red">*</span></label>
 		        <textarea name="bericht" id="bericht"></textarea>
 		    	<br><br>
-		        <input type="submit" value="verzenden">
+		        <input class="btn btn-light btn-pink" type="submit" value="verzenden">
 			</form>
 			
 		</section>
-		
-		
-	</main>
-    <script src="js/dist/main.min.js"></script>
-    <footer class="footer"><p>Nele Van Nevel - 7SWM<br>Viso Mariakerke</p></footer>
-</body>
-</html>
 
 <?php
 // stap 4: De verbinding met de database sluiten  
@@ -87,30 +80,19 @@ if(isset($_POST['voorn'])&&isset($_POST['achtern'])&&isset($_POST['email'])&&iss
     $_POST['bericht'] = htmlspecialchars($_POST['bericht']);
   
     $to = $_POST["email"];
-    $subject = "contact via site";
+    $subject = "Contact via site";
 
     $message = "
     <html>
-    <head>
-    <title>Contact via site</title>
-    </head>
-    <body>
-    <p>This email contains HTML Tags!</p>
-    <table>
-    <tr>
-    <th>Voornaam</th>
-    <th>Achternaam</th>
-    <th>E-mail</th>
-    <th>Bericht</th>
-    </tr>
-    <tr>
-    <td>".$_POST["voorn"]."</td>
-    <td>".$_POST["achtern"]."</td>
-    <td>".$_POST["email"]."</td>
-    <td>".$_POST["bericht"]."</td>
-    </tr>
-    </table>
-    </body>
+        <head>
+        <title>Contact via site</title>
+        </head>
+        <body>
+            <h1>Contact via website</h1>
+            <p><b>".$_POST["achtern"]. " ". $_POST["voorn"]."</b> contacteerde ons via de website met de volgende email. <br> 
+            ".$_POST["email"]. "</p>
+            <p>Het bericht luidt als volgt..<br>".$_POST["bericht"]."</p>        
+        </body>
     </html>
     ";
 
@@ -119,8 +101,8 @@ if(isset($_POST['voorn'])&&isset($_POST['achtern'])&&isset($_POST['email'])&&iss
     $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
     // More headers
-    $headers .= 'From: <dekesels@visocloud.org>' . "\r\n";
-    $headers .= 'Cc: test@visocloud.org' . "\r\n";
+    $headers .= 'From:' .$_POST["email"] . "\r\n";
+    $headers .= 'Cc: vanneveln@visocloud.org' . "\r\n";
 
     if(mail($to,$subject,$message,$headers)){
         echo "<p>Bericht verstuurd</p>";
@@ -131,4 +113,9 @@ if(isset($_POST['voorn'])&&isset($_POST['achtern'])&&isset($_POST['email'])&&iss
 }
  
 ?>
+</main>
+    <script src="js/dist/main.min.js"></script>
+    <footer class="footer"><p>Nele Van Nevel - 7SWM<br>Viso Mariakerke</p></footer>
+</body>
+</html>
 
