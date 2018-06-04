@@ -14,7 +14,7 @@
 			<input type="text" name="naam" id="naam" autofocus required value="<?php echo $rij['naam'];?>">
 			<br>
 			<label for="beschrijving">Beschrijving product:</label>
-			<textarea name="beschrijving" id="beschrijving"> <?php echo $rij['beschrijving'];?> </textarea>
+			<textarea name="beschrijving" id="beschrijving" rows="10" cols="3"> <?php echo $rij['beschrijving'];?> </textarea>
 			<br>
 			<label for="prijs">Prijs product:</label>
 			<input type="number" name="prijs" id="prijs" required value="<?php echo $rij['prijs'];?>">
