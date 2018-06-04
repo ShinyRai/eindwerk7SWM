@@ -21,9 +21,9 @@ include("includes/db_conn.php");
 	
 	// 2) met mysqli_real_escape_string($conn, $_POST['naamveld']
 	$_POST['naam'] = mysqli_real_escape_string($conn, $_POST['naam']);
-	$_POST['beschrijving'] = mysqli_real_escape_string($conn, $_POST['acteurs']);
-	$_POST['prijs'] = mysqli_real_escape_string($conn, $_POST['regisseur']);
-	$_POST['afb'] = mysqli_real_escape_string($conn, $_POST['categorie']);
+	$_POST['beschrijving'] = mysqli_real_escape_string($conn, $_POST['beschrijving']);
+	$_POST['prijs'] = mysqli_real_escape_string($conn, $_POST['prijs']);
+	$_POST['afb'] = mysqli_real_escape_string($conn, $_POST['afb']);
 
 
 // stap 2: De query opstellen en uitvoeren
