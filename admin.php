@@ -106,6 +106,7 @@ if (mysqli_num_rows($result) > 0) {
 						<p class=\"card-text\">
 						<h3>{$rij['naam']}</h3>{$rij['beschrijving']}</p>
 						<a class=\"btn btn-light \" href=\"wijzigen-form.php?id={$rij['id']}\"><span><img src=\"images/wijzigen.png\"></span>  wijzigen</a>
+						<a class=\"btn btn-light \" href=\"verwijderen.php?id={$rij['id']}\"><span><img src=\"images/trash.png\"></span>  verwijderen</a>
 					</div>
 				</div>
 			</div>";
