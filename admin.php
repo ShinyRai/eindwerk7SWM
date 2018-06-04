@@ -107,6 +107,7 @@ if (mysqli_num_rows($result) > 0) {
 						<h3>{$rij['naam']}</h3>{$rij['beschrijving']}</p>
 						<a class=\"btn btn-light \" href=\"wijzigen-form.php?id={$rij['id']}\"><span><img src=\"images/wijzigen.png\"></span>  wijzigen</a>
 						<a class=\"btn btn-light \" href=\"verwijderen.php?id={$rij['id']}\"><span><img src=\"images/trash.png\"></span>  verwijderen</a>
+						<a class=\"btn btn-light \" href=\"toevoegen-form.php?id={$rij['id']}\"><span><img src=\"images/add.png\"></span>  toevoegen</a>
 					</div>
 				</div>
 			</div>";
