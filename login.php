@@ -24,9 +24,13 @@ include("includes/db_conn.php");
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="nl">
 <head>
-	<title>login - PoshKey</title>
+	<meta charset="UTF-8" />
+	<meta name="description" content="PoshKey is een biologisch drankje, bedoeld als vervanging van alcohol. Blijf klassevol en nuchter.">
+  	<meta name="keywords" content="PoshKey, poshkey, Poshkey, poshKey, drank, drink, alcohol-vrij, alcohol vrij, glazen fles, mango banaan, aardbei sinaasappel, appel kiwi, aardbei appelsien">
+  	<meta name="author" content="PoshKey Inc.">
+	<title>PoshKey</title>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -57,13 +61,14 @@ include("includes/db_conn.php");
 <main>
 
 	<section class="login-form">
+		<h2 class="subtitle">Log in op PoshKey</h2>
 		<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
 			<label for="username">Gebruikersnaam</label><br>
 			<input type="text" name="username" id="username">
 			<br>
 			<label for="username">Wachtwoord</label><br>
 			<input type="password" name="password" id="password">
-			<br><br>
+			<br>
 			<input class="btn btn-light btn-pink" type="submit" value="inloggen">
 		</form>
 		

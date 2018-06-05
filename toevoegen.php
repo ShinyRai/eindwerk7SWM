@@ -1,6 +1,8 @@
 
-
 <?php
+
+include("includes/db_conn.php");
+
 	//validatie, als deze zijn ingevuld doe dan..
 	if (isset($_POST['naam']) && isset($_POST['beschrijving']) && isset($_POST['prijs']) ){
 

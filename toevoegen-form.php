@@ -1,5 +1,5 @@
 <?php
-
+include("login-check.php");
 include("includes/db_conn.php");
 
 

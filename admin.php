@@ -1,5 +1,6 @@
 <?php
 //stap 1b: bestand db_conn.php insluiten
+include("login-check.php");
 include("includes/db_conn.php");
 ?>
 
@@ -100,8 +101,8 @@ if (mysqli_num_rows($result) > 0) {
 						<p class=\"card-text\">
 						<h3>{$rij['naam']}</h3>{$rij['beschrijving']}</p>
 						<a class=\"btn btn-light \" href=\"wijzigen-form.php?id={$rij['id']}\"><span><img src=\"images/wijzigen.png\"></span>  wijzigen</a>
-						<a class=\"btn btn-light \" href=\"verwijderen.php?id={$rij['id']}\"><span><img src=\"images/trash.png\"></span>  verwijderen</a> <br><br>
-						<a class=\"btn btn-light \" href=\"toevoegen-form.php\"><span><img src=\"images/add.png\"></span>  toevoegen</a>
+						<a class=\"btn btn-light \" href=\"verwijderen.php?id={$rij['id']}\" onclick=\"return confirm('Ben je zeker dat je dit product wil verwijderen?')\"><span><img src=\"images/trash.png\"></span>  verwijderen</a> 
+						
 					</div>
 				</div>
 			</div>";
@@ -111,10 +112,11 @@ if (mysqli_num_rows($result) > 0) {
 	echo "<p>Er werden geen gegevens gevonden in de DB</p>";	
 } // einde if (mysqli_num_rows($result) > 0)
 ?>		
-	  					
-	  					
+	  				
 	
 			</div>
+					
+	  			<a class="btn btn-light " href="toevoegen-form.php"><span><img src="images/add.png"></span>  toevoegen</a>	
 			<div class="row">
 				<div class="col-12 d-flex justify-content-center">
 					<a href="cart.php" class="btn btn-pink">KOOP NU</a>

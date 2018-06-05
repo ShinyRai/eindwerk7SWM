@@ -1,5 +1,6 @@
 <?php
 //stap 1b: bestand db_conn.php insluiten
+include("login-check.php");
 include("includes/db_conn.php");
 
 

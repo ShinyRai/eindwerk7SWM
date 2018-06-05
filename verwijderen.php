@@ -1,5 +1,7 @@
 <?php
 
+include("login-check.php");
+
 include("includes/db_conn.php");
 
 if (!isset ($_GET["id"])) {
@@ -9,7 +11,7 @@ if (!isset ($_GET["id"])) {
 }
 
 
-$sql = "DELETE from panden WHERE id=" .$_GET['id']." LIMIT 1";
+$sql = "DELETE from producten WHERE id=" .$_GET['id']." LIMIT 1";
 
 if ($result = mysqli_query($db,$sql)) {
 echo "De Query ".$sql." is met succes uitgevoerd<br>";
