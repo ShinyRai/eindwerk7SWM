@@ -64,7 +64,7 @@ include("includes/db_conn.php");
 			<label for="username">Wachtwoord</label><br>
 			<input type="password" name="password" id="password">
 			<br><br>
-			<input type="submit" value="inloggen">
+			<input class="btn btn-light btn-pink" type="submit" value="inloggen">
 		</form>
 		
 	</section>

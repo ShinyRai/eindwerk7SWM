@@ -37,13 +37,11 @@ $rij = mysqli_fetch_array($resultlezen);
 		<div class="container">
 			<div class="row justify-content-between">
 				<div class="col-md-7 col-sm-7">
-			     	<a href="index.php" title="terug naar de homepage"><img class="logoimg" src="images/logo.png" alt="logo"></a>
+			     	<a href="admin.php" title="terug naar de homepage"><img class="logoimg" src="images/logo.png" alt="logo"></a>
 			    </div>
 			    <div class="col-md-5 mrg-top col-sm-5">
 			    	<a class="nav-link" href="#">nieuwsbrief</a>
 			      <a class="nav-link" href="admin.php#prods">Producten</a>
-					<a class="nav-link" href="cart.php">Koop nu</a>
-					<a class="nav-link" href="contact.php">contact</a>
 			    </div>
 			</div>
 		</div>	

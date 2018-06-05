@@ -28,13 +28,11 @@ include("includes/db_conn.php");
 		<div class="container">
 			<div class="row justify-content-between">
 				<div class="col-md-7 col-sm-7">
-			     	<a href="index.php" title="terug naar de homepage"><img class="logoimg" src="images/logo.png" alt="logo"></a>
+			     	<a href="admin.php" title="terug naar de homepage"><img class="logoimg" src="images/logo.png" alt="logo"></a>
 			    </div>
 			    <div class="col-md-5 mrg-top col-sm-5">
 			    	<a class="nav-link" href="#">nieuwsbrief</a>
 			      <a class="nav-link" href="admin.php#prods">Producten</a>
-					<a class="nav-link" href="cart.php">Koop nu</a>
-					<a class="nav-link" href="contact.php">contact</a>
 			    </div>
 			</div>
 		</div>	
@@ -102,8 +100,8 @@ if (mysqli_num_rows($result) > 0) {
 						<p class=\"card-text\">
 						<h3>{$rij['naam']}</h3>{$rij['beschrijving']}</p>
 						<a class=\"btn btn-light \" href=\"wijzigen-form.php?id={$rij['id']}\"><span><img src=\"images/wijzigen.png\"></span>  wijzigen</a>
-						<a class=\"btn btn-light \" href=\"verwijderen.php?id={$rij['id']}\"><span><img src=\"images/trash.png\"></span>  verwijderen</a>
-						<a class=\"btn btn-light \" href=\"toevoegen-form.php?id={$rij['id']}\"><span><img src=\"images/add.png\"></span>  toevoegen</a>
+						<a class=\"btn btn-light \" href=\"verwijderen.php?id={$rij['id']}\"><span><img src=\"images/trash.png\"></span>  verwijderen</a> <br><br>
+						<a class=\"btn btn-light \" href=\"toevoegen-form.php\"><span><img src=\"images/add.png\"></span>  toevoegen</a>
 					</div>
 				</div>
 			</div>";
