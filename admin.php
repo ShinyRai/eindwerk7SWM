@@ -64,12 +64,8 @@ include("includes/db_conn.php");
 		<section class="aboutus row">
 			<div class="col txt_block">
 				<h2 class="subtitle">over ons</h2>
-				<p class="txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				<p class="txt">Hier bij PoshKey streven wij naar hoge kwaliteit voor een diplomatische prijs. Onze dranken worden geserveerd in glazen flessen omdat het beter is voor het milieu, de kurk is bovendien ook geproduceerd met gerecycleerde materialen.
+				Momenteel hebben wij drie verschillende smaken op de markt maar we hopen dat we ons aanbod kunnen uitbreiden zodat iedereen zeker wat wils heeft.</p>
 				<button type="button" class="btn btn-pink"><a href="contact.php">CONTACTEER ONS</a></button>
 			</div>
 
