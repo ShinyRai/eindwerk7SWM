@@ -133,7 +133,7 @@
                     '{$_POST['email']}')";
 
             if ($resulttoevoegen = mysqli_query($db,$sql)) {
-            echo "De Query ".$sql." is met succes uitgevoerd<br>";
+            echo "Bedankt voor uw bestelling!";
 
             }else{
             echo "FOUT: Query kon niet uitgevoerd worden"; 
