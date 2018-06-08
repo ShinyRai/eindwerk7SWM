@@ -111,7 +111,7 @@ $maand = date('F');
     $headers .= 'Cc: vanneveln@visocloud.org' . "\r\n";
 
     if(mail($to,$subject,$message,$headers)){
-        echo "<p>:(</p>";
+        echo "<p>:) ?</p>";
       } else {
         echo "<p>:((</p>";
       }
