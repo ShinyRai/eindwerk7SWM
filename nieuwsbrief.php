@@ -7,10 +7,10 @@ include("includes/db_conn.php");
 //STEP 2: queries uitvoeren
 
 $query = "SELECT * FROM users"; // !!!
-$resultlezen = mysqli_query($db, $query);
-
-
-$rij = mysqli_fetch_array($resultlezen);
+if (!$result = mysqli_query($db,$query)) {
+        echo "FOUT: Query kon niet uitgevoerd worden"; 
+        exit; 
+    }
 ?>
 
 <!DOCTYPE html>
@@ -52,7 +52,21 @@ $rij = mysqli_fetch_array($resultlezen);
             <section id="contact-form" style="margin-top: 150px; margin-bottom: 200px;">
             <h2 class="subtitle">Nieuwsbrief verzenden</h2>
             <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-                <p>Druk op de knop om een nieuwsbrief te verzenden naar alle geregistreerde e-mailadressen.</p>
+                <p>Druk op de knop om een nieuwsbrief te verzenden naar de volgende geregistreerde e-mailadressen.</p>
+                <?php
+                    if (mysqli_num_rows($result) > 0) {
+                        while ($rij = mysqli_fetch_array($result)) {
+                            if( "{$rij['nieuwsbrief']}" == 1)
+                                echo "{$rij['email']} <br>";
+                            }
+
+                        }else {
+                            echo "<p>Er zijn nog geen geregistreerde e-mailadressen</p>";    
+                        } // einde if (mysqli_num_rows($result) > 0)
+                ?>  
+
+
+
                 <input class="btn btn-light btn-pink" type="submit" value="verzenden">
             </form>
             
@@ -68,8 +82,10 @@ $rij = mysqli_fetch_array($resultlezen);
 
 $maand = date('F');
 
+
+
 //EMAIL SCRIPT >:'0  
-    $to = $rij['email']. ", vanneveln@visocloud.org";
+    $to = 'vanneveln@visocloud.org';
     $subject = "Nieuwsbrief PoshKey";
 
     $message = "
@@ -95,9 +111,9 @@ $maand = date('F');
     $headers .= 'Cc: vanneveln@visocloud.org' . "\r\n";
 
     if(mail($to,$subject,$message,$headers)){
-        echo "<p>Bericht verstuurd</p>";
+        echo "<p>:(</p>";
       } else {
-        echo "<p>Fout bij het versturen van e-mail</p>";
+        echo "<p>:((</p>";
       }
   
 
