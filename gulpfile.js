@@ -29,3 +29,7 @@ gulp.task('js', function () {
   	.pipe(uglify())
     .pipe(gulp.dest('js/dist'));
 });
+
+gulp.task('js:watch', function () {
+  gulp.watch('./js/src/*', ['js']);
+});

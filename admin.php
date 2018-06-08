@@ -32,8 +32,9 @@ include("includes/db_conn.php");
 			     	<a href="admin.php" title="terug naar de homepage"><img class="logoimg" src="images/logo.png" alt="logo"></a>
 			    </div>
 			    <div class="col-md-5 mrg-top col-sm-5">
-			    	<a class="nav-link" href="#">nieuwsbrief</a>
-			      <a class="nav-link" href="admin.php#prods">Producten</a>
+			    	<a class="nav-link" href="nieuwsbrief.php">nieuwsbrief</a>
+			      	<a class="nav-link" href="admin.php#prods">Producten</a>
+			      	<a class="nav-link" href="logout.php">Logout</a>
 			    </div>
 			</div>
 		</div>	
@@ -117,12 +118,6 @@ if (mysqli_num_rows($result) > 0) {
 			</div>
 					
 	  			<a class="btn btn-light " href="toevoegen-form.php"><span><img src="images/add.png"></span>  toevoegen</a>	
-			<div class="row">
-				<div class="col-12 d-flex justify-content-center">
-					<a href="cart.php" class="btn btn-pink">KOOP NU</a>
-				</div>
-			</div>
-
 		</section>
 		
 		

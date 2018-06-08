@@ -1,3 +1,7 @@
+<?php
+    include("includes/db_conn.php");
+?>
+
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -37,11 +41,18 @@
 <main class="container">
 
 <?php 
+
+    //$query = "SELECT * FROM producten WHERE prijs";
+    //$resultlezen = mysqli_query($db, $query);
+
+
+    //$rij = mysqli_fetch_array($resultlezen);
+
+
     $prijs_basis = 4.20;
     $prijs = number_format($prijs_basis, 2);
     
 
-    $prijs_totaal = $aantal * $prijs_basis;
 ?>
     
 
@@ -55,33 +66,33 @@
         </div>
         <div class="row">
             <p class="smaak col-3">AARDBEI x SINAASAPPEL</p>
-            <p class="aantal col-1"><input min="0" class="nr-min" type="number" name="aantal1" id="aantal1" value= 0></p>
+            <p class="aantal col-1"><input min="0" class="nr-min productAmount" type="number" name="aantalAardbeiSinaas" id="aantalAardbeiSinaas" data-price="<?php echo $prijs ?>" value= 0></p>
             <p class="prijs col-2"><?php echo $prijs ?> EUR / st.</p>
         </div>
         <div class="row">
             <p class="smaak col-3">MANGO x BANAAN</p>
-            <p class="aantal col-1"><input min="0" class="nr-min" type="number" name="aantal2" id="aantal2" value= 0></p>
+            <p class="aantal col-1"><input min="0" class="nr-min productAmount" type="number" name="aantalMangoBanaan" id="aantalMangoBanaan" data-price="<?php echo $prijs ?>" value= 0></p>
             <p class="prijs col-2"><?php echo $prijs ?> EUR / st.</p>
         </div>
         <div class="row">
             <p class="smaak col-3">APPEL x KIWI</p>
-            <p class="aantal col-1"><input min="0" class="nr-min" type="number" name="aantal3" id="aantal3" value= 0></p>
+            <p class="aantal col-1"><input min="0" class="nr-min productAmount" type="number" name="aantalAppelKiwi" id="aantalAppelKiwi" data-price="<?php echo $prijs ?>" value= 0></p>
             <p class="prijs col-2"><?php echo $prijs ?> EUR / st.</p>
         </div>
         <div class="row">
             <p class="smaak col-3"></p>
             <p class="aantal label col-1">TOTAAL</p>
-            <p class="totaal col-2"><?php echo $prijs_totaal ?></p>
+            <p class="totaal col-2">€ 0</p>
         </div>
     
     </form>
 
-    <div class="row">
+    <form class="row" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
         <div class="col-6 ">
             <h2 class="subtitle">check-out</h2>
             <p class="label">persoonlijke gegevens</p>
-            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-                <input type="text" name="naam" id="naam" placeholder=" NAAM"> <br>
+            
+                <input type="text" name="voornaam" id="voornaam" placeholder=" VOORNAAM"> <input type="text" name="achternaam" id="achternaam" placeholder=" ACHTERNAAM"> <br>
                 <input type="email" name="email" id="email" placeholder=" EMAIL">
                 <p>Je wordt automatisch ingeschreven voor onze nieuwsbrief</p>
 
@@ -90,26 +101,48 @@
                 <input type="radio" name="betaalmethode" value="american_express"><img class="payment" src="images/pay_americanexpress.png" alt="AmeriCanExpress"><br>
                 <input type="radio" name="betaalmethode" value="visa"><img class="payment" src="images/pay_visa.png" alt="Visa">
                 <input type="radio" name="betaalmethode" value="mastercard"><img class="payment" src="images/pay_mastercard.png" alt="Mastercard">
-            </form>
+            
 
         </div>
         <div class="col-6 ">
             <div class="col-12"> <br><br><br></div>
-            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+    
                 <p class="label">leveringsadres</p>
-                <input type="text" name="adres" id="adres" placeholder=" ADRES"> <input type="text" name="nrbus" id="nrbus" placeholder=" NR/BUS"><br>
+                <input type="text" name="adres" id="adres" placeholder=" STRAATNAAM"> <input type="text" name="nrbus" id="nrbus" placeholder=" NR/BUS"><br>
                 <input type="number" name="postcode" id="postcode" placeholder=" POSTCODE"> <input type="text" name="gemeente" id="gemeente" placeholder=" GEMEENTE"><br>
 
                 <input class="btn btn-light btn-pink" type="submit" value="betalen">
-            </form>
+            
         </div>
         
-    </div>
+    </form>
 
-<script>
-        console.log( $("#aantal1").val() );
 
-    </script>
+    <?php
+
+        //validatie, als deze zijn ingevuld doe dan..
+        if (isset($_POST['voornaam']) && isset($_POST['achternaam']) && isset($_POST['email']) && $_POST['voornaam'] != "" && $_POST['achternaam'] != "" && $_POST['email'] != "" ){
+
+            $_POST['voornaam'] = mysqli_real_escape_string($db, $_POST['voornaam']);
+            $_POST['achternaam'] = mysqli_real_escape_string($db, $_POST['achternaam']);
+            $_POST['email'] = mysqli_real_escape_string($db, $_POST['email']);
+
+            $sql = "INSERT INTO users (voornaam, achternaam, email)
+            VALUES ('{$_POST['voornaam']}',
+                    '{$_POST['achternaam']}',
+                    '{$_POST['email']}')";
+
+            if ($resulttoevoegen = mysqli_query($db,$sql)) {
+            echo "De Query ".$sql." is met succes uitgevoerd<br>";
+
+            }else{
+            echo "FOUT: Query kon niet uitgevoerd worden"; 
+                exit;
+            }
+
+        }
+
+    ?>
 	
 	
 </main>
@@ -117,73 +150,4 @@
 <footer class="footer"><p>Nele Van Nevel - 7SWM<br>Viso Mariakerke</p></footer>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<?php
-// validatie
-if(isset($_POST['voorn'])&&isset($_POST['achtern'])&&isset($_POST['email'])&&isset($_POST['bericht'])){
-  
-    $_POST['voorn'] = htmlspecialchars($_POST['voorn']);
-    $_POST['achtern'] = htmlspecialchars($_POST['achtern']);
-    $_POST['email'] = htmlspecialchars($_POST['email']);
-    $_POST['bericht'] = htmlspecialchars($_POST['bericht']);
-  
-    $to = "vanneveln@visocloud.org";
-    $subject = "contact via site";
-
-    $message = "
-    <html>
-    <head>
-    <title>Contact via site</title>
-    </head>
-    <body>
-    <p>This email contains HTML Tags!</p>
-    <table>
-    <tr>
-    <th>Voornaam</th>
-    <th>Achternaam</th>
-    <th>E-mail</th>
-    <th>Bericht</th>
-    </tr>
-    <tr>
-    <td>".$_POST["voorn"]."</td>
-    <td>".$_POST["achtern"]."</td>
-    <td>".$_POST["email"]."</td>
-    <td>".$_POST["bericht"]."</td>
-    </tr>
-    </table>
-    </body>
-    </html>
-    ";
-
-    // Always set content-type when sending HTML email
-    $headers = "MIME-Version: 1.0" . "\r\n";
-    $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-
-    // More headers
-    $headers .= 'From: <dekesels@visocloud.org>' . "\r\n";
-    $headers .= 'Cc: test@visocloud.org' . "\r\n";
-
-    if(mail($to,$subject,$message,$headers)){
-        echo "<p>Bericht verstuurd</p>";
-      } else {
-        echo "<p>Fout bij het versturen van e-mail</p>";
-      }
-  
-}
- 
-?>
 
