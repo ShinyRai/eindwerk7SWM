@@ -1,7 +1,7 @@
 <?php
 if (empty($_GET["id"])){
-	// als de url-parameter niet werd meegegeven ga terug naar admin.php
-	header("Location:admin.php");
+	// als de url-parameter niet werd meegegeven ga terug naar index.php
+	header("Location:index.php");
 	exit;
 }
 
