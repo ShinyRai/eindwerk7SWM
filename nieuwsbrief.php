@@ -58,6 +58,47 @@ if (!$result = mysqli_query($db,$query)) {
                         while ($rij = mysqli_fetch_array($result)) {
                             if( "{$rij['nieuwsbrief']}" == 1)
                                 echo "{$rij['email']} <br>";
+
+///                           
+
+                                $maand = date('F');
+
+
+                                if (isset($_POST['onderwerp']) && isset($_POST['bericht'])){
+                                //EMAIL SCRIPT >:'0  
+                                    $to = $rij['email'];
+                                    $subject = $_POST['onderwerp'];
+                                
+                                    $message = "
+                                    <html>
+                                        <head>
+                                        <title>".$_POST['onderwerp']."</title>
+                                        </head>
+                                        <body>
+                                            <h1>Nieuwsbrief " . $maand . " </h1>
+                                            <p>Beste <b>".$rij['achternaam']. " ". $rij['voornaam']."</b> dit is onze nieuwsbrief voor deze maand.<br> </p>
+                                            <p>".$_POST['bericht']."</p>        
+                                        </body>
+                                        <a href='http://vanneveln.happyvisocoders.be/GIP/nieuwsbrief-logout.php?id=".$rij['id']."'>Meld me af van de nieuwsbrief</a>
+                                    </html>
+                                    ";
+
+                                    // Always set content-type when sending HTML email
+                                    $headers = "MIME-Version: 1.0" . "\r\n";
+                                    $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+                                    // More headers
+                                    $headers .= 'From: info@poshkey.be' . "\r\n";
+                                    $headers .= 'Cc: test@viso.org' . "\r\n";
+
+                                    if(mail($to,$subject,$message,$headers)){
+                                        echo "<p> <br>bericht verzonden</p>";
+                                      } else {
+                                        echo "<p>:(( kapot</p>";
+                                      }
+                                  
+                                }
+ 
                             }
 
                         }else {
@@ -81,47 +122,7 @@ if (!$result = mysqli_query($db,$query)) {
 
 
 
-<?php
 
-$maand = date('F');
-
-
-if (isset($_POST['onderwerp']) && isset($_POST['bericht'])){
-//EMAIL SCRIPT >:'0  
-    $to = 'nelevannevel8@gmail.com, vanneveln@visocloud.org';
-    $subject = $_POST['onderwerp'];
-
-    $message = "
-    <html>
-        <head>
-        <title>".$_POST['onderwerp']."</title>
-        </head>
-        <body>
-            <h1>Nieuwsbrief " . $maand . " </h1>
-            <p>Beste <b>".$rij['achternaam']. " ". $rij['voornaam']."</b> dit is onze nieuwsbrief voor deze maand.<br> </p>
-            <p>".$_POST['bericht']."</p>        
-        </body>
-        <a href='http://vanneveln.happyvisocoders.be/GIP/nieuwsbrief-logout.php?id=".$rij['id']."'>Meld me af van de nieuwsbrief</a>
-    </html>
-    ";
-
-    // Always set content-type when sending HTML email
-    $headers = "MIME-Version: 1.0" . "\r\n";
-    $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-
-    // More headers
-    $headers .= 'From: info@poshkey.be' . "\r\n";
-    $headers .= 'Cc: test@viso.org' . "\r\n";
-
-    if(mail($to,$subject,$message,$headers)){
-        echo "<p>bericht verzonden???</p>";
-      } else {
-        echo "<p>:(( kapot</p>";
-      }
-  
-}
- 
-?>
 
 </main>
     <script src="js/dist/main.min.js"></script>

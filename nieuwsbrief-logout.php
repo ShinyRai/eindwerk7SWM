@@ -12,7 +12,7 @@ include("includes/db_conn.php");
 // SQL-injectie voorkomen
 	// 1) zet integers om met (int) $_POST['naamveld']
 	$_GET['id'] = (int) $_GET['id'];
-	$_GET['prijs'] = (double) $_POST['nieuwsbrief'];
+	$_POST['nieuwsbrief'] = (boolean) $_POST['nieuwsbrief'];
 
 // stap 2: De query opstellen en uitvoeren
 
@@ -34,5 +34,5 @@ if (!mysqli_close($db)) {
 
 
 // stap 5: Terugkeren naar admin.php  
-header("Location:admin.php");
+header("Location:index.php");
 exit;
